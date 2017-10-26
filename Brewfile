@@ -28,4 +28,6 @@ cask 'google-chrome'
 cask 'slack'
 cask 'transmission'
 cask 'vlc'
+cask '1password'
+
 
