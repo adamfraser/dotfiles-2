@@ -1,4 +1,101 @@
+call plug#begin('~/.vim/plugged')
+Plug 'airblade/vim-gitgutter'
+Plug 'vim-scripts/tComment'
+Plug 'tpope/vim-fugitive'
+Plug 'scrooloose/nerdtree'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-rails', { 'for': 'ruby' }
+Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
+Plug 'mxw/vim-jsx', { 'for': 'javascript' }
+Plug 'liamgriffiths/vim-tomorrow-theme'
+Plug 'thoughtbot/vim-rspec'
+Plug 'vim-scripts/a.vim', { 'for': 'ruby' }
+Plug 'neomake/neomake'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'rakr/vim-one'
+Plug 'hukl/Smyck-Color-Scheme'
+call plug#end()
+
+
+set nocompatible
 syntax on
+filetype on
 
 " Wrap gitcommit file types at the appropriate length
 filetype indent plugin on
+
+set autoindent
+set autoread
+set clipboard=unnamed
+set cursorline
+set encoding=utf-8
+set expandtab
+set history=1000
+set hlsearch
+set ignorecase
+set incsearch
+set laststatus=2
+set number
+set ruler
+set scrolloff=3
+set shiftwidth=2
+set showmatch
+set smartcase
+set softtabstop=2
+set tabstop=8
+set wildignore=log/**,node_modules/**,tmp/**
+set wildmenu
+set wildmode=longest,list,full
+set backspace=indent,eol,start
+set cmdheight=2
+set timeoutlen=200
+set noautochdir
+set noerrorbells
+set novisualbell
+set nowrap
+set noswapfile
+set virtualedit=all
+set synmaxcol=200
+set tags=./tags;/
+set undodir=~/.vim/undodir
+set undofile
+set undolevels=1000
+set undoreload=1000
+set mouse=a
+
+let mapleader = ','
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
+nmap <leader>, <C-^>
+nmap <leader>a :A<CR>
+nmap <leader>r :R<CR>
+vmap > >gv
+vmap < <gv
+vmap = =:perldo s/\s+$//<CR>gv
+nmap == ==:perldo s/\s+$//<CR>
+map ; :
+map <C-p> :Files<CR>
+nmap <leader>m :History<CR>
+vnoremap p "_dP
+cmap w!! w !sudo tee % > /dev/null
+map <C-n> :NERDTreeToggle<CR>
+map <leader>s :call RunNearestSpec()<CR>
+nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
+nnoremap \ :Ag<SPACE>
+map <Esc><Esc> :w<CR>
+
+"NERDTree
+let NERDTreeChDirMode=0
+let NERDTreeQuitOnOpen=0
+let NERDTreeMouseMode=2
+let NERDTreeShowHidden=1
+let NERDTreeIgnore=['\.pyc','\~$','\.swo$','\.swp$','\.git$','\.hg','\.svn','\.bzr','\.DS_Store']
+let NERDTreeKeepTreeInNewTab=1
+let g:nerdtree_tabs_open_on_gui_startup=0
+
+"Colors
+""colorscheme smyck
+colorscheme tomorrow-night
+
