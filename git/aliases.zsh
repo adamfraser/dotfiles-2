@@ -24,7 +24,8 @@ alias gac='git add -A && git commit -m'
 alias ge='git-edit-new'
 alias gd='git diff'
 alias gap='git add -p'
-
+alias gds='gd --cached'
+alias gdw='gd --word-diff=color --word-diff-regex="[A-z0-9_-]+"'
 
 function git-log-graph() {
 	git log --graph --pretty=format:'%Cred%h%Creset%C(yellow)%d%Creset %s %C(green bold)- %an %C(black bold)%cd (%cr)%Creset' --abbrev-commit --date=short "$@"
