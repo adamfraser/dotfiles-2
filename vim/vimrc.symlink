@@ -5,8 +5,8 @@ Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-rails', { 'for': 'ruby' }
-Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
-Plug 'mxw/vim-jsx', { 'for': 'javascript' }
+Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
 Plug 'liamgriffiths/vim-tomorrow-theme'
 Plug 'thoughtbot/vim-rspec'
 Plug 'vim-scripts/a.vim', { 'for': 'ruby' }
@@ -14,6 +14,7 @@ Plug 'neomake/neomake'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'rakr/vim-one'
 Plug 'hukl/Smyck-Color-Scheme'
+Plug 'kien/ctrlp.vim'
 call plug#end()
 
 
@@ -94,6 +95,9 @@ let NERDTreeShowHidden=1
 let NERDTreeIgnore=['\.pyc','\~$','\.swo$','\.swp$','\.git$','\.hg','\.svn','\.bzr','\.DS_Store']
 let NERDTreeKeepTreeInNewTab=1
 let g:nerdtree_tabs_open_on_gui_startup=0
+
+"Vim-Jsx
+let g:jsx_ext_required = 0
 
 "Colors
 ""colorscheme smyck
